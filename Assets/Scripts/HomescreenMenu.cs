@@ -14,12 +14,14 @@ public class HomescreenMenu : MonoBehaviour
     public string sceneLoad;
     public string url;
     public GameObject quitConfirm;
+    public GameObject inviPanel;
     public void ShowUI()
     {
         fadeIn = true;
     }
     void Start()
     {
+        myUiGroup.alpha = 0f;
         if (videos == null)
         {
             videos = GetComponent<VideoPlayer>();
@@ -47,11 +49,15 @@ public class HomescreenMenu : MonoBehaviour
     void OnVideoEnd(VideoPlayer vp)
     {
         fadeIn = true;
+        inviPanel.SetActive(false);
         bgm.Play();
     }
     void OnDestroy()
     {
-        if (videos != null) videos.loopPointReached -= OnVideoEnd;
+        if (videos != null) 
+        {
+            videos.loopPointReached -= OnVideoEnd;
+        }
     }
     public void QuitConfirmation()
     {
