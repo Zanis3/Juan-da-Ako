@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AidMasterQuiz/DRABC Puzzle.unity
     guid: 294e5a1e5d848a241826453cf612d76e
+  - enabled: 1
+    path: Assets/Scenes/LifeLineDash/LifeLineDashTutorial.unity
+    guid: 6e8a72adb12b7314ea470d3608dcd758
   m_configObjects: {}
