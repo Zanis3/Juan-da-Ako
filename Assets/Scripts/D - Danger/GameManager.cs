@@ -4,6 +4,7 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject victoryScreen;
     public static GameManager Instance
     { 
         get; private set; 
@@ -56,7 +57,7 @@ public class GameManager : MonoBehaviour
     {
         if (activeDraggables.Count == 0)
         {
-            Debug.Log("Level Complete!");
+            victoryScreen.SetActive(true);
         }
     }
 
