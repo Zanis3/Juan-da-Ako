@@ -26,7 +26,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         {
             myCanvas = GetComponentInParent<Canvas>();
         }
-        // Register with GameManager (if exists)
         if (GameManager.Instance != null)
         {
             GameManager.Instance.RegisterDraggable(this);
@@ -34,7 +33,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     }
     public void OnPointerDown(PointerEventData eventData)
     {
-        
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -62,7 +60,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             ResetPosition();
         }
     }
-    // ✅ Detect if object is NEAR (not past) the screen edge
     private bool IsNearScreenEdge(Vector2 screenPoint, out Vector2 dir)
     {
         dir = Vector2.zero;
