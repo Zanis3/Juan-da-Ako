@@ -10,7 +10,7 @@ public class SpawnObstacles : MonoBehaviour
     public float minY;
     public float maxY;
     public float timeBetweenSpawn;
-    private float spawnTime;
+    public float spawnTime;
     private float[] laneYs = { -3f, -1.5f, 0f };
     void Update()
     {

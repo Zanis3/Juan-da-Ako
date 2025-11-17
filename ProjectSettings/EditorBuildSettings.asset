@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/AidMasterQuiz/Danger.unity
     guid: 1b6f6b4ff7da8384b876d0c61b9ab854
   - enabled: 1
+    path: Assets/Scenes/AidMasterQuiz/Response.unity
+    guid: 457c31e1e09f64f44bc7a6334d3badcd
+  - enabled: 1
+    path: Assets/Scenes/AidMasterQuiz/Send.unity
+    guid: 016ad5e3cce1a9b4c8adf048a2ac6994
+  - enabled: 1
     path: Assets/Scenes/AidMasterQuiz/CPR.unity
     guid: d8c6e56699abe4241972a2d0930402db
   - enabled: 1
