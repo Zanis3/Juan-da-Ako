@@ -9,12 +9,13 @@ public class PlayAnimation : MonoBehaviour
     public Animator animate;
     public string sceneLoad;
     public string clip;
+    public GameObject victoryScreen;
     public void ClipToPlay()
     {
         animate.SetTrigger(clip);
     }
     public void OnAnimationEnd()
     {
-        SceneManager.LoadScene(sceneLoad);
+        victoryScreen.SetActive(true);
     }
 }

@@ -18,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/AidMasterQuiz/Send.unity
     guid: 016ad5e3cce1a9b4c8adf048a2ac6994
   - enabled: 1
+    path: Assets/Scenes/AidMasterQuiz/Airway.unity
+    guid: eb1c9f0774943364292bf4b2a3ed54ec
+  - enabled: 1
+    path: Assets/Scenes/AidMasterQuiz/Breathing.unity
+    guid: 36c34d5fd2ee72c43a592c2b602ec3d9
+  - enabled: 1
     path: Assets/Scenes/AidMasterQuiz/CPR.unity
     guid: d8c6e56699abe4241972a2d0930402db
   - enabled: 1
