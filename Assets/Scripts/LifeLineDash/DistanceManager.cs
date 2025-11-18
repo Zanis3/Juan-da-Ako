@@ -12,20 +12,20 @@ public class DistanceManager : MonoBehaviour
     public GameObject victoryScreen;
     public LifeLineDashCameraMovement cam;
     public LifeLineDashLoopingBackground bg;
-    public SpawnObstacles obs;
+    public GameObject spawnerObstacles;
     void Update()
     {
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             distance +=1 * Time.deltaTime;
-            distanceText.text = distance+"/"+finishLine+" M";
+            distanceText.text = ((int)distance)+"/"+finishLine+" M";
         }
         if (distance >= finishLine)
         {
 
             cam.cameraSpeed = 0f;
             bg.backgroundSpeed = 0f;
-            obs.spawnTime = 0f;
+            spawnerObstacles.SetActive(false);
             Invoke("Delay", 1f);
         }
     }
