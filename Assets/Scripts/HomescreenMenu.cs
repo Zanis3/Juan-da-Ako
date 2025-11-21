@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 public class HomescreenMenu : MonoBehaviour
 {
     [SerializeField] private CanvasGroup myUiGroup;
+    [SerializeField] private CanvasGroup disclaimerGroup;
     [SerializeField] private bool fadeIn = false;
+    [SerializeField] private bool fadeOut = false;
     public VideoPlayer videos;
     public AudioSource bgm;
     public float fadeSpeed = 0f;
@@ -15,13 +17,18 @@ public class HomescreenMenu : MonoBehaviour
     public string url;
     public GameObject quitConfirm;
     public GameObject inviPanel;
+    public GameObject disclaimerButton;
     public void ShowUI()
     {
         fadeIn = true;
     }
+    public void HideUI()
+    {
+        fadeOut = true;
+    }
     void Start()
     {
-        myUiGroup.alpha = 0f;
+        myUiGroup.alpha = 0;
         if (videos == null)
         {
             videos = GetComponent<VideoPlayer>();
@@ -41,6 +48,18 @@ public class HomescreenMenu : MonoBehaviour
                 }
             }
         }
+        if (fadeOut)
+        {
+            if (disclaimerGroup.alpha >= 0)
+            {
+                disclaimerGroup.alpha -= Time.deltaTime;
+                if (disclaimerGroup.alpha == 0)
+                {
+                    fadeOut = false;
+                    disclaimerButton.SetActive(false);
+                }
+            }
+        }
     }
     public void NextScene()
     {
@@ -50,6 +69,11 @@ public class HomescreenMenu : MonoBehaviour
     {
         fadeIn = true;
         inviPanel.SetActive(false);
+        //bgm.Play();
+    }
+    void OnDisclaimerFalse(VideoPlayer vp)
+    {
+
         bgm.Play();
     }
     void OnDestroy()

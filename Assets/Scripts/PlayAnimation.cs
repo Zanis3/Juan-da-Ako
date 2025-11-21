@@ -9,10 +9,15 @@ public class PlayAnimation : MonoBehaviour
     public Animator animate;
     public string sceneLoad;
     public string clip;
+    public string clipTwo;
     public GameObject victoryScreen;
     public void ClipToPlay()
     {
         animate.SetTrigger(clip);
+    }
+    public void ClipToPlay2nd()
+    {
+        animate.SetTrigger(clipTwo);
     }
     public void OnAnimationEnd()
     {

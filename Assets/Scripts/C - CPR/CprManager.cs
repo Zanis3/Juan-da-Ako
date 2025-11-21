@@ -21,6 +21,7 @@ public class CprManager : MonoBehaviour
     public float perfectHit;
     public float missedHit;
     public GameObject nextScenarioPrototype;
+    public GameObject defeatScreen;
     //public Text precentHitText, normalText, goodText, perfectText, missText, finalScore;
     void Start()
     {
@@ -31,23 +32,36 @@ public class CprManager : MonoBehaviour
     }
     void Update()
     {
+        float hits = normalHit + goodHit + perfectHit;
         totalHit = normalHit + goodHit + perfectHit + missedHit;
         if (!startPlaying)
         {
-            if (Input.anyKeyDown)
-            {
-                startPlaying = true;
-                bScrl.hasStarted = true;
-                theMusic.Play();
-            }
+            return;
         }
         else
         {
-            if (totalHit == totalNotes)
+            if (totalHit == 30)
             {
-                nextScenarioPrototype.SetActive(true);
+                if (hits < totalHit)
+                {
+                    defeatScreen.SetActive(true);
+                }
+                else
+                {
+                    Invoke("Victory", 2f);
+                }
             }
         }
+    }
+    public void Victory()
+    {
+        nextScenarioPrototype.SetActive(true);
+    }
+    public void StartGame()
+    {
+        startPlaying = true;
+        bScrl.hasStarted = true;
+        theMusic.Play();
     }
     public void NoteHit()
     {
