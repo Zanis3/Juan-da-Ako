@@ -2917,9 +2917,9 @@ MonoBehaviour:
     finishUIElements: {fileID: 999017805}
   parameters:
     margins: 15
-    correctBGColor: {r: 0.4618596, g: 0.8584906, b: 0.36040404, a: 0.78431374}
-    incorrectBGColor: {r: 0.7830189, g: 0.19575472, b: 0.19575472, a: 0.78431374}
-    finalBGColor: {r: 0.22745098, g: 0.73333335, b: 0.81960785, a: 0.78431374}
+    correctBGColor: {r: 0.4618596, g: 0.8584906, b: 0.36040404, a: 0.8627451}
+    incorrectBGColor: {r: 0.7830189, g: 0.19575472, b: 0.19575472, a: 0.8627451}
+    finalBGColor: {r: 0.22745098, g: 0.73333335, b: 0.81960785, a: 0.8627451}
 --- !u!114 &1941202344
 MonoBehaviour:
   m_ObjectHideFlags: 0
