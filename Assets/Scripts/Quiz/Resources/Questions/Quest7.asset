@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9328ff22d3c343748b11c5c32ac63333, type: 3}
-  m_Name: Quest1
+  m_Name: Quest7
   m_EditorClassIdentifier: 
-  _info: What is D in DSRABC?
+  _info: What is the best action if someone is choking but still coughing forcefully?
   _answers:
-  - _info: Danger
+  - _info: Start abdominal thrusts immediately
+    _isCorrect: 0
+  - _info: Slap their back repeatedly
+    _isCorrect: 0
+  - _info: Encourage them to keep coughing
     _isCorrect: 1
-  - _info: Deceased
-    _isCorrect: 0
-  - _info: Do nothing
-    _isCorrect: 0
   _useTimer: 0
   _timer: 0
   _answerType: 0

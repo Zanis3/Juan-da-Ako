@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9328ff22d3c343748b11c5c32ac63333, type: 3}
   m_Name: Quest3
   m_EditorClassIdentifier: 
-  _info: Say My Name
+  _info: After ensuring scene safety, what should you check next?
   _answers:
-  - _info: Heisenberg
+  - _info: "The person\u2019s pulse"
+    _isCorrect: 0
+  - _info: Responsiveness
     _isCorrect: 1
-  - _info: Walter White
+  - _info: Medical ID
     _isCorrect: 0
   _useTimer: 0
   _timer: 0

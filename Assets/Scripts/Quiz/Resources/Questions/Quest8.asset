@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9328ff22d3c343748b11c5c32ac63333, type: 3}
-  m_Name: Quest1
+  m_Name: Quest8
   m_EditorClassIdentifier: 
-  _info: What is D in DSRABC?
+  _info: What should you do if an AED arrives while performing CPR?
   _answers:
-  - _info: Danger
-    _isCorrect: 1
-  - _info: Deceased
+  - _info: Finish 5 minutes of CPR before using it
     _isCorrect: 0
-  - _info: Do nothing
+  - _info: Turn it on and follow the prompts immediately
+    _isCorrect: 1
+  - _info: Ignore it and continue CPR
     _isCorrect: 0
   _useTimer: 0
   _timer: 0

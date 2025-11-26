@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9328ff22d3c343748b11c5c32ac63333, type: 3}
-  m_Name: Quest1
+  m_Name: Quest5
   m_EditorClassIdentifier: 
-  _info: What is D in DSRABC?
+  _info: What is the recommended compression depth for an adult during CPR?
   _answers:
-  - _info: Danger
+  - _info: About 2 inches (5 cm)
     _isCorrect: 1
-  - _info: Deceased
+  - _info: 1 inch (2.5 cm)
     _isCorrect: 0
-  - _info: Do nothing
+  - _info: 4 inches (10 cm)
     _isCorrect: 0
   _useTimer: 0
   _timer: 0

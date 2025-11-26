@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9328ff22d3c343748b11c5c32ac63333, type: 3}
   m_Name: Quest2
   m_EditorClassIdentifier: 
-  _info: Tatagos ba tayo?
+  _info: What is the first thing you should do when you see someone collapse?
   _answers:
-  - _info: Oo
+  - _info: Start CPR immediately
+    _isCorrect: 0
+  - _info: Check the scene for safety
     _isCorrect: 1
-  - _info: Hinde
+  - _info: Look for breathing only
     _isCorrect: 0
   _useTimer: 0
   _timer: 0
