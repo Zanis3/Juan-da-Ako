@@ -2267,6 +2267,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7200540711758440133, guid: 46df03d1965e77a498ba9d5c10b19395, type: 3}
+      propertyPath: loadScene
+      value: TutorialQuiz
+      objectReference: {fileID: 0}
     - target: {fileID: 7729824159551294412, guid: 46df03d1965e77a498ba9d5c10b19395, type: 3}
       propertyPath: m_Name
       value: VictoryScreen

@@ -2807,7 +2807,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 311466527518988802, guid: 108073eb3e7c1914487e4bd122bebe28, type: 3}
   m_PrefabInstance: {fileID: 9052448829432384545}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 9052448829432384546}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a40b3088b63c90f478e51023f1ec83a8, type: 3}
@@ -3359,8 +3359,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8745165940987974237, guid: 108073eb3e7c1914487e4bd122bebe28, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9052448829432384547}
   m_SourcePrefab: {fileID: 100100000, guid: 108073eb3e7c1914487e4bd122bebe28, type: 3}
+--- !u!1 &9052448829432384546 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8745165940987974237, guid: 108073eb3e7c1914487e4bd122bebe28, type: 3}
+  m_PrefabInstance: {fileID: 9052448829432384545}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9052448829432384547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9052448829432384546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8e7c9470815dc84e991417e773c1892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vnLevelAt: 0
+  achievementLevelAt: 0
+  aidMasterQuizLevelAt: 1
+  lifeLineDashLevelAt: 0
+  galleryLevelAt: 0
+  gameCode: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

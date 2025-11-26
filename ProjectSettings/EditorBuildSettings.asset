@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Homescreen.unity
     guid: 0c6cdd033e5c5d84f845f3e23f2b1720
   - enabled: 1
-    path: Assets/Scenes/AidMasterQuiz/Danger.unity
+    path: Assets/Scenes/AidMasterQuiz/AMQLvl1.unity
     guid: 1b6f6b4ff7da8384b876d0c61b9ab854
   - enabled: 1
     path: Assets/Scenes/AidMasterQuiz/Response.unity
@@ -27,9 +27,12 @@ EditorBuildSettings:
     path: Assets/Scenes/AidMasterQuiz/CPR.unity
     guid: d8c6e56699abe4241972a2d0930402db
   - enabled: 1
+    path: Assets/Scenes/AidMasterQuiz/TutorialQuiz.unity
+    guid: 055e327074bdde74990b0011d90f1e15
+  - enabled: 1
     path: Assets/Scenes/AidMasterQuiz/DRABC Puzzle.unity
     guid: 294e5a1e5d848a241826453cf612d76e
   - enabled: 1
-    path: Assets/Scenes/LifeLineDash/LifeLineDashTutorial.unity
+    path: Assets/Scenes/LifeLineDash/LDLvl1.unity
     guid: 6e8a72adb12b7314ea470d3608dcd758
   m_configObjects: {}
