@@ -22,8 +22,8 @@ public class Question : ScriptableObject
     //Parameters
     [SerializeField] private bool _useTimer = false;
     public bool UseTimer {get {return _useTimer;}}
-    [SerializeField] private bool _timer = false;
-    public bool Timer {get {return _timer;}}
+    [SerializeField] private int _timer = 0;
+    public int Timer {get {return _timer;}}
     [SerializeField] private AnswerType _answerType = AnswerType.Multi;
     public AnswerType GetAnswerType { get{return _answerType;}}
     [SerializeField] private int _addScore = 1;

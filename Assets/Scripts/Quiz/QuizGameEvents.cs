@@ -13,7 +13,7 @@ public class QuizGameEvents : ScriptableObject
     public DisplayResolutionScreenCallback DisplayResolutionScreen;
     public delegate void ScoreUpdatedCallback();
     public ScoreUpdatedCallback ScoreUpdated;
-    //[HideInInspector]
+    [HideInInspector]
     public int CurrentFinalScore;
     [HideInInspector]
     public int StartupHighscore;

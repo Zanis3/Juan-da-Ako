@@ -2,16 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using TMPro;
+using System.Threading;
 
 public class QuizGameManager : MonoBehaviour
 {
     Question[] _questions = null;
     public Question[] Questions {get {return _questions;}}
     [SerializeField] QuizGameEvents events = null;
+    [SerializeField] Animator timerAnimator = null;
+    [SerializeField] TextMeshProUGUI timerText = null;
+    [SerializeField] Color timerHalfWayOutColor = Color.yellow;
+    [SerializeField] Color timerAlmostOutColor = Color.red;
     private List<AnswerData> PickedAnswers = new List<AnswerData>();
     private List<int> FinishedQuestions = new List<int>();
     private int currentQuestion = 0;
+    private int timerStateParaHash = 0;
     private IEnumerator IE_WaitTillNextRound = null;
+    private IEnumerator IE_StartTimer = null;
+    private Color timerDefaultColor;
     private bool IsFinished
     {
         get
@@ -29,8 +38,10 @@ public class QuizGameManager : MonoBehaviour
     }
     void Start()
     {
+        timerDefaultColor = timerText.color;
         LoadQuestions();
         events.CurrentFinalScore = 0;
+        timerStateParaHash = Animator.StringToHash("TimerState");
         var seed = UnityEngine.Random.Range(int.MinValue, int.MaxValue);
         UnityEngine.Random.InitState(seed);
         Display();
@@ -78,9 +89,14 @@ public class QuizGameManager : MonoBehaviour
         {
             Debug.Log("Something went wrong dipshit, code better");
         }
+        if (question.UseTimer)
+        {
+            UpdateTimer(question.UseTimer);
+        }
     }
     public void Accept()
     {
+        UpdateTimer(false);
         bool isCorrect = CheckAnswers();
         FinishedQuestions.Add(currentQuestion);
         UpdateScore((isCorrect) ? Questions[currentQuestion].AddScore : -Questions[currentQuestion].AddScore);
@@ -95,6 +111,45 @@ public class QuizGameManager : MonoBehaviour
         }
         IE_WaitTillNextRound = WaitTillNextRound();
         StartCoroutine(IE_WaitTillNextRound);
+    }
+    void UpdateTimer(bool state)
+    {
+        switch (state)
+        {
+            case true:
+                IE_StartTimer = StartTimer();
+                StartCoroutine(IE_StartTimer);
+                timerAnimator.SetInteger(timerStateParaHash, 2);
+            break;
+            case false:
+                if (IE_StartTimer != null)
+                {
+                    StopCoroutine(IE_StartTimer);
+                }
+                timerAnimator.SetInteger(timerStateParaHash, 1);
+            break;
+        }
+    }
+    IEnumerator StartTimer()
+    {
+        var totalTime = Questions[currentQuestion].Timer;
+        var timeLeft = totalTime;
+        timerText.color = timerDefaultColor;
+        while (timeLeft > 0)
+        {
+            timeLeft--;
+            if (timeLeft < totalTime / 2 && timeLeft > totalTime / 4)
+            {
+                timerText.color = timerHalfWayOutColor;
+            }
+            if (timeLeft < totalTime / 4)
+            {
+                timerText.color = timerAlmostOutColor;
+            }
+            timerText.text = timeLeft.ToString();
+            yield return new WaitForSeconds(1.0f);
+        }
+        Accept();
     }
     IEnumerator WaitTillNextRound()
     {
