@@ -64,11 +64,13 @@ public class QuizUIManager : MonoBehaviour
     {
         events.UpdateQuestionUI += UpdateQuestionUI;
         events.DisplayResolutionScreen += DisplayResolution;
+        events.ScoreUpdated += UpdateScoreUI;
     }
     void OnDisable()
     {
         events.UpdateQuestionUI -= UpdateQuestionUI;
         events.DisplayResolutionScreen -= DisplayResolution;
+        events.ScoreUpdated -= UpdateScoreUI;
     }
     void UpdateQuestionUI(Question question)
     {
@@ -77,6 +79,7 @@ public class QuizUIManager : MonoBehaviour
     }
     void Start()
     {
+        UpdateScoreUI();
         resStateParaHash = Animator.StringToHash("ScreenState");
     }
     void DisplayResolution(ResolutionScreenType type, int score)
@@ -157,5 +160,9 @@ public class QuizUIManager : MonoBehaviour
             Destroy(answer.gameObject);
         }
         currentAnswer.Clear();
+    }
+    void UpdateScoreUI()
+    {
+        uIElements.ScoreText.text = "Score: "+events.CurrentFinalScore;
     }
 }

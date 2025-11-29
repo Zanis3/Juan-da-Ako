@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using TMPro;
 using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class QuizGameManager : MonoBehaviour
 {
@@ -36,11 +37,15 @@ public class QuizGameManager : MonoBehaviour
     {
         events.UpdateQuestionAnswer -= UpdateAnswers;
     }
+    void Awake()
+    {
+        events.CurrentFinalScore = 0;
+    }
     void Start()
     {
+        events.StartupHighscore = PlayerPrefs.GetInt(GameUtility.SavePrefKey);
         timerDefaultColor = timerText.color;
         LoadQuestions();
-        events.CurrentFinalScore = 0;
         timerStateParaHash = Animator.StringToHash("TimerState");
         var seed = UnityEngine.Random.Range(int.MinValue, int.MaxValue);
         UnityEngine.Random.InitState(seed);
@@ -100,6 +105,10 @@ public class QuizGameManager : MonoBehaviour
         bool isCorrect = CheckAnswers();
         FinishedQuestions.Add(currentQuestion);
         UpdateScore((isCorrect) ? Questions[currentQuestion].AddScore : -Questions[currentQuestion].AddScore);
+        if (IsFinished)
+        {
+            SetHighScore();
+        }
         var type = (IsFinished) ? QuizUIManager.ResolutionScreenType.FInish : (isCorrect) ? QuizUIManager.ResolutionScreenType.Correct : QuizUIManager.ResolutionScreenType.Incorrect;
         if (events.DisplayResolutionScreen != null)
         {
@@ -202,6 +211,22 @@ public class QuizGameManager : MonoBehaviour
         for(int i = 0;i < objs.Length;i++)
         {
             _questions[i] = (Question)objs[i];
+        }
+    }
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    private void SetHighScore()
+    {
+        var highscore = PlayerPrefs.GetInt(GameUtility.SavePrefKey);
+        if (highscore < events.CurrentFinalScore)
+        {
+            PlayerPrefs.SetInt(GameUtility.SavePrefKey, events.CurrentFinalScore);
         }
     }
     private void UpdateScore(int add)
