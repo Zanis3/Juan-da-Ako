@@ -1128,6 +1128,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &752610556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 752610558}
+  - component: {fileID: 752610557}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &752610557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752610556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d538c4790123c7c4aabbe389dba497a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: CorrectSFX
+    clip: {fileID: 8300000, guid: a664a2ba768969244a537866a725c08f, type: 3}
+    parameters:
+      Volume: 0.6
+      Pitch: 1.2
+      Loop: 0
+    Source: {fileID: 0}
+  - name: IncorrectSFX
+    clip: {fileID: 8300000, guid: cec3f7be05622ce4dadd5a1b8d297f63, type: 3}
+    parameters:
+      Volume: 0.6
+      Pitch: 1.2
+      Loop: 0
+    Source: {fileID: 0}
+  - name: CountdownSFX
+    clip: {fileID: 8300000, guid: 9425302313d423f42ae93859e3a9851f, type: 3}
+    parameters:
+      Volume: 0.6
+      Pitch: 1.05
+      Loop: 0
+    Source: {fileID: 0}
+  - name: BGM
+    clip: {fileID: 8300000, guid: c224294f993d6cd4e97cab227713a518, type: 3}
+    parameters:
+      Volume: 0.2
+      Pitch: 1
+      Loop: 1
+    Source: {fileID: 0}
+  sourcePrefabs: {fileID: 1868196996761505439, guid: 3757edc2d17d9f849b44aca4598e85bc, type: 3}
+  startUpTrack: BGM
+--- !u!4 &752610558
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752610556}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 180.62428, y: 102.89404, z: -0.012623973}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &772959589
 GameObject:
   m_ObjectHideFlags: 0
@@ -3151,6 +3226,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 702832044}
   - {fileID: 1941202345}
+  - {fileID: 752610558}
   - {fileID: 1575442924}
   - {fileID: 1495693756}
   - {fileID: 1791409419}

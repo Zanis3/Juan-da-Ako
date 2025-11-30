@@ -61,9 +61,9 @@ public class QuizGameManager : MonoBehaviour
                 {
                     answer.Reset();
                 }
-                PickedAnswers.Clear();
-                PickedAnswers.Add(newAnswer);
             }
+            PickedAnswers.Clear();
+            PickedAnswers.Add(newAnswer);
         }
         else
         {
@@ -114,12 +114,16 @@ public class QuizGameManager : MonoBehaviour
         {
             events.DisplayResolutionScreen(type, Questions[currentQuestion].AddScore);
         }
-        if (IE_WaitTillNextRound != null)
+        QuizAudioManager.Instance.PlaySound((isCorrect) ? "CorrectSFX" : "IncorrectSFX");
+        if (type != QuizUIManager.ResolutionScreenType.FInish)
         {
-            StopCoroutine(IE_WaitTillNextRound);
+            if (IE_WaitTillNextRound != null)
+            {
+                StopCoroutine(IE_WaitTillNextRound);
+            }
+            IE_WaitTillNextRound = WaitTillNextRound();
+            StartCoroutine(IE_WaitTillNextRound);
         }
-        IE_WaitTillNextRound = WaitTillNextRound();
-        StartCoroutine(IE_WaitTillNextRound);
     }
     void UpdateTimer(bool state)
     {
@@ -147,6 +151,7 @@ public class QuizGameManager : MonoBehaviour
         while (timeLeft > 0)
         {
             timeLeft--;
+            QuizAudioManager.Instance.PlaySound("CountdownSFX");
             if (timeLeft < totalTime / 2 && timeLeft > totalTime / 4)
             {
                 timerText.color = timerHalfWayOutColor;
