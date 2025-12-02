@@ -2187,6 +2187,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1624348295}
     m_Modifications:
+    - target: {fileID: 1342179135684671156, guid: 46df03d1965e77a498ba9d5c10b19395, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 85
+      objectReference: {fileID: 0}
     - target: {fileID: 1787075782240002877, guid: 46df03d1965e77a498ba9d5c10b19395, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2267,6 +2271,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2307556509111262601, guid: 46df03d1965e77a498ba9d5c10b19395, type: 3}
+      propertyPath: m_Text
+      value: 'Great Job!
+
+        For the Final Round, a
+
+        Quiz to test everything
+
+        you''ve
+        learned so far'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307556509111262601, guid: 46df03d1965e77a498ba9d5c10b19395, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2307556509111262601, guid: 46df03d1965e77a498ba9d5c10b19395, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7200540711758440133, guid: 46df03d1965e77a498ba9d5c10b19395, type: 3}
       propertyPath: loadScene
       value: TutorialQuiz
@@ -2274,6 +2297,10 @@ PrefabInstance:
     - target: {fileID: 7729824159551294412, guid: 46df03d1965e77a498ba9d5c10b19395, type: 3}
       propertyPath: m_Name
       value: VictoryScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729824159551294412, guid: 46df03d1965e77a498ba9d5c10b19395, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
