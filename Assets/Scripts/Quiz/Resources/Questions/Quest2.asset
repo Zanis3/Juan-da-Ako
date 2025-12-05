@@ -21,6 +21,6 @@ MonoBehaviour:
   - _info: Look for breathing only
     _isCorrect: 0
   _useTimer: 1
-  _timer: 10
+  _timer: 30
   _answerType: 0
   _addScore: 1

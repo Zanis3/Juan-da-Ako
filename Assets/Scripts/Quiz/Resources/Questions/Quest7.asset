@@ -21,6 +21,6 @@ MonoBehaviour:
   - _info: Encourage them to keep coughing
     _isCorrect: 1
   _useTimer: 1
-  _timer: 10
+  _timer: 30
   _answerType: 0
   _addScore: 1

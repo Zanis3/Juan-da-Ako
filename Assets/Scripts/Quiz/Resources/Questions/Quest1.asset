@@ -21,6 +21,6 @@ MonoBehaviour:
   - _info: Do nothing
     _isCorrect: 0
   _useTimer: 1
-  _timer: 10
+  _timer: 30
   _answerType: 1
   _addScore: 1
